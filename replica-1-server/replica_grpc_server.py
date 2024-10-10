@@ -7,13 +7,15 @@ import replication_pb2_grpc
 class ContentReplicatorService(replication_pb2_grpc.ContentReplicatorServicer):
     def AddContent(self, request, context):
         # Example: Save the content to a file
-        with open(f'/path/to/replica/{request.path}', 'wb') as f:
+        directory_path = os.path.abspath("replica_1_contents")
+        with open(f'{directory_path}/{request.path}', 'wb') as f:
             f.write(request.content)
         return replication_pb2.ReplicationResponse(success=True, message="Content added successfully")
 
     def RemoveContent(self, request, context):
         # Example: Remove the content file
-        os.remove(f'/path/to/replica/{request.path}')
+        directory_path = os.path.abspath("replica_1_contents")
+        os.remove(f'{directory_path}/{request.path}')
         return replication_pb2.ReplicationResponse(success=True, message="Content removed successfully")
 
 def serve():
