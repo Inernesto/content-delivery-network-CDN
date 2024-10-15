@@ -10,7 +10,7 @@ class ContentReplicatorService(replication_pb2_grpc.ContentReplicatorServicer):
         super().__init__()  # This is usually not necessary for gRPC service classes, but it's good practice.
 
         # Set up a base directory for replica contents
-        self.base_directory = os.path.abspath("replica_2_contents")
+        self.base_directory = os.path.abspath("replica_contents")
         # Ensure the directory exists
         if not os.path.exists(self.base_directory):
             os.makedirs(self.base_directory)
