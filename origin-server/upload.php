@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['video'], $_FILES['thu
     $description_content = "<===== " . $_POST['title'] . " =====>\n";
     $description_content .= "ID: " . $unique_id . "\n";
     $description_content .= "Date: " . date('Y-m-d H:i:s') . "\n";
-    $description_content .= "Conetent: ". $_POST['description'] . "\n\n";
+    $description_content .= "Content: ". $_POST['description'] . "\n\n";
 
     file_put_contents($description_file, $description_content, FILE_APPEND | LOCK_EX);
 

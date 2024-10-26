@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Space between thumbnails */
+  padding: 20px;
+}
+
+.video-thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 400px; /* Reduced fixed height for each thumbnail */
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 250px; /* Fixed height for images */
+  object-fit: content;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc; /* Subtle border below the image */
+}
+
+.video-info {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem; /* Adjust text size */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.video-info .video-title {
+  font-weight: bold; /* Make the title bolder */
+}
+
+.video-info .video-content {
+  font-size: 16px; /* Example font size, adjust as needed */
+  line-height: 1.5; /* Ensures proper spacing between lines for readability */
+  overflow-wrap: break-word; /* Ensures long words do not cause layout issues */
+  word-wrap: break-word; /* Older CSS3 property for compatibility */
+  max-height: 4.5em; /* Limits the height to the equivalent of three lines */
+  overflow: hidden; /* Hides any overflow, ensuring it doesn't expand beyond set lines */
+  text-overflow: ellipsis; /* Adds ellipsis if the text overflows (requires a single line, may not be as effective with multiple lines) */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Limits the content to three lines, only works in webkit browsers */
+}
+
+/* For the modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.modal-content {
+  position: relative;
+  width: 90%; /* Manageable width for modal content */
+  max-width: 800px; /* Maximum width for larger screens */
+}
+
+.video-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  /* width: 100%; */
+  flex-direction: column; /* Stack children vertically */
+}
+
+video {
+  width: 100%; /* Responsive width to fit video-container */
+  max-height: 80vh; /* Max height to avoid overflow */
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 10; /* Ensures it is clickable over video */
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,10 +1,8 @@
-<!-- index.php -->
 <?php
+// Extract just the path part of the URI
+$requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-
-$request = $_GET['path'] ?? "";
-
-$request = "/" . $request;
+$request = $requestPath ?? "/";
 
 switch ($request) {
     case '/' :
