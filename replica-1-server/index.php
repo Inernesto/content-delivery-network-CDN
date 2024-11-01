@@ -62,6 +62,7 @@ function loadImage($id) {
     }
 }
 
+
 function streamVideo($id) {
     // Sanitize the ID to ensure it contains only alphanumeric characters, dashes, or underscores
     $sanitizedId = preg_replace('/[^a-zA-Z0-9-_]/', '', $id);
@@ -81,30 +82,14 @@ function streamVideo($id) {
 
     $fp = fopen($videoPath, 'rb');
 
-    $size   = filesize($videoPath); // File size
+    $size = filesize($videoPath); // File size
     $length = $size;               // Content length
-    $start  = 0;                   // Start byte
-    $end    = $size - 1;           // End byte
+    $start = 0;                   // Start byte
+    $end = $size - 1;             // End byte
 
     header("Accept-Ranges: bytes");
 
-    if (isset($_SERVER['HTTP_RANGE'])) {
-        $range = $_SERVER['HTTP_RANGE'];
-        $range = preg_replace('/^bytes=/', '', $range);
-        list($start, $end) = explode('-', $range, 2);
-        if ($end == '') {
-            $end = $size - 1;
-        }
-        
-        $start = intval($start);
-        $end = intval($end);
-
-        header('206 Partial Content'); // Simpler and adapts to the HTTP version in use
-        header("Content-Range: bytes $start-$end/$size");
-        header("Content-Length: " . ($end - $start + 1));
-    } else {
-        header("Content-Length: $size");
-    }
+    header("Content-Length: " . ($size - $start));
 
     fseek($fp, $start);
     $bufferSize = 8 * 1024; // 8KB buffer
