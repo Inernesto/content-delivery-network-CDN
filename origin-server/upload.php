@@ -41,10 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['video'], $_FILES['thu
 
     // Process Description Text
     $description_file = $description_dir . "Descriptions.txt";
-    $description_content = "<===== " . $_POST['title'] . " =====>\n";
+    $description_content = "\n<===== " . $_POST['title'] . " =====>\n";
     $description_content .= "ID: " . $unique_id . "\n";
     $description_content .= "Date: " . date('Y-m-d H:i:s') . "\n";
-    $description_content .= "Content: ". $_POST['description'] . "\n\n";
+    $description_content .= "Content: ". $_POST['description'] . "\n";
 
     file_put_contents($description_file, $description_content, FILE_APPEND | LOCK_EX);
 

@@ -17,7 +17,7 @@
             <img src="https://<?= $selectedServer ?>/load-image?id=<?= $video['id'] ?>" alt="Thumbnail" class="video-thumbnail-image">
                 <div class="video-info">
                     <p class="video-title"><?= $video['title'] ?></p>
-                    <p class="video-content"><?= substr($video['content'], 0, 100) ?>...</p>
+                    <p class="video-content"><?= $video['content'] ?></p>
                 </div>
             </div>
         <?php endforeach; ?>

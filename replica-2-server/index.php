@@ -30,9 +30,20 @@ switch ($request) {
 
 /***** Helper Functions *****/
 function parseDescriptions($filePath) {
+    // Check if the file exists
+    if (!file_exists($filePath)) {
+        // If the file does not exist, set the HTTP response code to 404 (Not Found)
+        http_response_code(404);
+        // Optionally, return a JSON error message
+        // echo json_encode(['error' => 'File not found']);
+        return;
+    }
+
+    // If the file exists, proceed with parsing
     $content = file_get_contents($filePath);
     preg_match_all('/<===== (.*) =====>\nID: (.*)\nDate: (.*)\nContent: (.*)\n/sU', $content, $matches, PREG_SET_ORDER);
     $descriptions = [];
+
     foreach ($matches as $match) {
         $descriptions[] = [
             'title' => $match[1],
@@ -42,6 +53,7 @@ function parseDescriptions($filePath) {
         ];
     }
 
+    // Return the descriptions as JSON
     echo json_encode($descriptions);
 }
 
