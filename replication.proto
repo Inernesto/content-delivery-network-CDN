@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package replication;
+
+service ContentReplicator {
+  rpc AddContent(ReplicationRequest) returns (ReplicationResponse) {}
+  rpc RemoveContent(ReplicationRequest) returns (ReplicationResponse) {}
+}
+
+message ReplicationRequest {
+  string path = 1;
+  bytes content = 2;
+}
+
+message ReplicationResponse {
+  bool success = 1;
+  string message = 2;
+}

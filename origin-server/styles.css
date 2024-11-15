@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 24px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group {
+  padding: 15px 0px 15px 0px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 17px; /* Adjust this value as needed */
+  color: #333; /* Optional: changes the text color for better readability */
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  padding-right: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  font-size: 17px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Makes button span the entire width of the form */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.notify-present {
+  text-align: center;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
