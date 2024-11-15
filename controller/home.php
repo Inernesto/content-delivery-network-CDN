@@ -36,16 +36,6 @@
         </div>
     </div>
 
-
-    <!-- Modal -->
-    <!-- <div id="video-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <video id="video-player" controls></video>
-        </div>
-    </div> -->
-
-
     <script src="scripts.js"></script>
 </body>
 </html>
