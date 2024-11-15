@@ -77,22 +77,26 @@ This is a content-delivery-network (CDN) utilizing HTTP/2 throughout the data co
 	### For Windows
 	- Open C:\Windows\System32\drivers\etc\hosts with Notepad (run as Administrator).
 	- Add the following lines:
-	> 127.0.0.1   origin.local
-	> 127.0.0.1   main-cdn.local
-	> 127.0.0.1   replica-1.local
-	> 127.0.0.1   replica-2.local
-	> 127.0.0.1   replica-3.local
+	```bash
+	127.0.0.1   origin.local
+	127.0.0.1   main-cdn.local
+	127.0.0.1   replica-1.local
+	127.0.0.1   replica-2.local
+	127.0.0.1   replica-3.local
+	```
 	
 	### For Linux/Mac
 	```bash
 	sudo nano /etc/hosts
 	```
 	- Add the following lines **(NB: Remember to enable the Virtual Hosts configuration file. You can look this up online.)**:
-	> 127.0.0.1   origin.local
-	> 127.0.0.1   main-cdn.local
-	> 127.0.0.1   replica-1.local
-	> 127.0.0.1   replica-2.local
-	> 127.0.0.1   replica-3.local
+	```bash
+	127.0.0.1   origin.local
+	127.0.0.1   main-cdn.local
+	127.0.0.1   replica-1.local
+	127.0.0.1   replica-2.local
+	127.0.0.1   replica-3.local
+	```
 	
 3. **Start the Apache server**
 	- In the downloaded or cloned repo from github, you will see a httpd conf file "httpd.conf", replace this with the httpd.conf file in "Apache/conf" directory of the version you installed.
