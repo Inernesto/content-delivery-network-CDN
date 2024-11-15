@@ -89,7 +89,7 @@ This is a content-delivery-network (CDN) utilizing HTTP/2 throughout the data co
 	```bash
 	sudo nano /etc/hosts
 	```
-	- Add the following lines **(NB: Remember to enable the Virtual Hosts configuration file. You can look this up online.)**:
+	- Add the following lines **(NB: Remember to enable the Virtual Hosts configuration file after adding the following lines. You can look this up online.)**:
 	```bash
 	127.0.0.1   origin.local
 	127.0.0.1   main-cdn.local
