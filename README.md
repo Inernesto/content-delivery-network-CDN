@@ -49,7 +49,7 @@ This is a content-delivery-network (CDN) utilizing HTTP/2 throughout the data co
    - Follow the installation instructions specific to your OS.
    - On Windows, you may need to configure the PHP executable in the System Environment Variables to make it accessible globally.
    
-5. **Download and Install Apache
+5. **Download and Install Apache**
 	- Go to the [official Apache HTTP server](https://httpd.apache.org/downloads.cgi).
 	- Download the version of Apache server that is compartible with the version of PHP you downloaded in 4. To know the version of Apache to download, check the php folder, you should see an application extension file like this "php8apache2_4.dll", this suggests that Apacche 2.4 is needed for this PHP version 8.
 	- On Windows, you may need to configure the Apacche executable in the System Environment Variables to make it accessible globally.
@@ -77,22 +77,22 @@ This is a content-delivery-network (CDN) utilizing HTTP/2 throughout the data co
 	### For Windows
 	- Open C:\Windows\System32\drivers\etc\hosts with Notepad (run as Administrator).
 	- Add the following lines:
-	- 127.0.0.1   origin.local
-	- 127.0.0.1   main-cdn.local
-	- 127.0.0.1   replica-1.local
-	- 127.0.0.1   replica-2.local
-	- 127.0.0.1   replica-3.local
+	> 127.0.0.1   origin.local
+	> 127.0.0.1   main-cdn.local
+	> 127.0.0.1   replica-1.local
+	> 127.0.0.1   replica-2.local
+	> 127.0.0.1   replica-3.local
 	
 	### For Linux/Mac
 	```bash
 	sudo nano /etc/hosts
 	```
-	- Add the following lines (NB: Remember to enable the Virtual Hosts configuration file. You can look this up online.):
-	- 127.0.0.1   origin.local
-	- 127.0.0.1   main-cdn.local
-	- 127.0.0.1   replica-1.local
-	- 127.0.0.1   replica-2.local
-	- 127.0.0.1   replica-3.local
+	- Add the following lines **(NB: Remember to enable the Virtual Hosts configuration file. You can look this up online.)**:
+	> 127.0.0.1   origin.local
+	> 127.0.0.1   main-cdn.local
+	> 127.0.0.1   replica-1.local
+	> 127.0.0.1   replica-2.local
+	> 127.0.0.1   replica-3.local
 	
 3. **Start the Apache server**
 	- In the downloaded or cloned repo from github, you will see a httpd conf file "httpd.conf", replace this with the httpd.conf file in "Apache/conf" directory of the version you installed.
@@ -109,9 +109,9 @@ This is a content-delivery-network (CDN) utilizing HTTP/2 throughout the data co
 	```
 	
 4. **Start your browser from the command line and ignore the certificate errors**
-	This makes it possible to run the program on the browser locally without the browser having to always validate the SSL/TLS certificate (since they are self-signed and not from a recognized organization). Ignore this step if you are able to use SSL/TLS certificates from trusted and recognized organizations.
-	### NB: 
-	Use this only for testing purposes on trusted networks, as it can expose you to security risks.
+	- This makes it possible to run the program on the browser locally without the browser having to always validate the SSL/TLS certificate (since they are self-signed and not from a recognized organization). Ignore this step if you are able to use SSL/TLS certificates from trusted and recognized organizations.
+	
+	> Use this only for testing purposes on trusted networks, as it can expose you to security risks.
 	
 	- Open a terminal and run the following code:
 	
@@ -131,7 +131,7 @@ This is a content-delivery-network (CDN) utilizing HTTP/2 throughout the data co
 	```
 
 5. **Run the application in the browser**
-	In the browser tab that was launched in step 4. run the cdn application.
+	- In the browser tab that was launched in step 4. run the cdn application.
 	
 	### To upload contents
 	https://origin.Local
