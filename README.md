@@ -100,6 +100,7 @@ This is a content-delivery-network (CDN) utilizing HTTP/2 throughout the data co
 	
 3. **Start the Apache server**
 	- In the downloaded or cloned repo from github, you will see a httpd conf file "httpd.conf", replace this with the httpd.conf file in "Apache/conf" directory of the version you installed.
+	- Make sure to change the path in the the following lines to your sysmtem path accordingly, (Line 37, 557, 560, 563, 574, 578, 579, 584, 601, 609, 610, 619, 636, 644, 645, 654, 671, 680, 681, 690, 707, 711, 712, 717).
 	- Start the Apache service.
 	
 	### To start the Apacche service
